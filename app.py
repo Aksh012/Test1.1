@@ -24,13 +24,21 @@ def css(folder,file):
 
 @app.route('/runcanvas', methods=['POST'])
 def run_canvas():
+    ''' Run the AC.py script '''
+    try:
         subprocess.run(['python', './AC.py'], check=True)
         return Response(status=204)
+    except Exception as e:
+        return str(e), 500
 
-@app.route('/runHand', methods=['POST'])
-def run_hand():
-        subprocess.run(['python' , './hand_gesture.py'], check=True)
-        return Response(status=205)
+# @app.route('/runHand', methods=['POST'])
+# def run_hand():
+#     ''' Run the hand_gesture.py script '''
+#     try:
+#         subprocess.run(['python', './hand_gesture.py'], check=True)
+#         return Response(status=205)
+#     except Exception as e:
+#         return str(e), 500
 
 
 # @app.route('', methods=['POST'])
