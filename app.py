@@ -124,7 +124,7 @@ def hand_gesture_recognition():
     cv2.destroyAllWindows()
 
 
-@app.route('/runHand', methods=['POST'])
+@app.route('/run_Hand')
 def run_Hand():
     # Execute the hand gesture recognition code when Button 2 is clicked
     hand_gesture_recognition()
